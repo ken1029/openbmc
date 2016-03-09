@@ -8,8 +8,7 @@ def run_git(d, cmd):
 python() {
         version_id = run_git(d, 'describe --abbrev=0')
         if version_id:
-                d.setVar('VERSION_ID', version_id)
-
+		d.setVar('VERSION_ID', "6.10")
         build_id = run_git(d, 'describe --dirty')
         if build_id:
                 d.setVar('BUILD_ID', build_id)

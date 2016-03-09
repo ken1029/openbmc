@@ -14,9 +14,9 @@ inherit obmc-phosphor-system-mgmt
 
 DEPENDS += "glib-2.0 systemd"
 RDEPENDS_${PN} += "python-subprocess python-compression libsystemd"
-SRC_URI += "git://github.com/openbmc/skeleton"
+SRC_URI += "git://github.com/ken1029/skeleton"
 
-SRCREV = "27ca44ad1a96f90d42dcb50183700e5ca5358642"
+SRCREV = "7262e4fa3c2ef61a5b87c7d790c830ddee7cba87"
 
 S = "${WORKDIR}"
 
