@@ -7,7 +7,7 @@ inherit pythonnative
 inherit skeleton-rev
 inherit obmc-phosphor-license
 
-HOMEPAGE = "http://github.com/openbmc/skeleton"
+HOMEPAGE = "http://github.com/foxconn-bmc-ks/skeleton"
 
 PROVIDES += "virtual/obmc-inventory-data"
 RPROVIDES_${PN} += "virtual-obmc-inventory-data"
