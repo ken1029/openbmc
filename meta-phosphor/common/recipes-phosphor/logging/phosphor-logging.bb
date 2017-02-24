@@ -15,12 +15,13 @@ DEPENDS += "systemd"
 DEPENDS += "python-mako-native"
 DEPENDS += "python-pyyaml-native"
 DEPENDS += "sdbusplus sdbusplus-native"
-RDEPENDS_${PN} += "sdbusplus"
+DEPENDS += "phosphor-dbus-interfaces"
+RDEPENDS_${PN} += "sdbusplus phosphor-dbus-interfaces"
 PROVIDES += "virtual/obmc-logging-mgmt"
 RPROVIDES_${PN} += "virtual-obmc-logging-mgmt"
 
 SRC_URI += "git://github.com/openbmc/phosphor-logging"
-SRCREV = "ac784ccd09e68fc8d74ed3b308230d61f9c9e12a"
+SRCREV = "1f36a88109ab5a59b84032d9a2cfb8314f4fbea5"
 
 S = "${WORKDIR}/git"
 
