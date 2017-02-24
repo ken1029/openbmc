@@ -7,6 +7,7 @@ inherit autotools pkgconfig
 inherit pythonnative
 inherit obmc-phosphor-license
 inherit obmc-phosphor-dbus-service
+inherit phosphor-dbus-interfaces
 
 DBUS_SERVICE_${PN} += "xyz.openbmc_project.Logging.service"
 
@@ -21,7 +22,8 @@ PROVIDES += "virtual/obmc-logging-mgmt"
 RPROVIDES_${PN} += "virtual-obmc-logging-mgmt"
 
 SRC_URI += "git://github.com/openbmc/phosphor-logging"
-SRCREV = "1f36a88109ab5a59b84032d9a2cfb8314f4fbea5"
+SRCREV = "7c30f49e75b7814834ae7cb3c57bd336f6135f13"
 
 S = "${WORKDIR}/git"
 
+EXTRA_OECONF = "YAML_DIR=${STAGING_DIR_NATIVE}${yaml_dir}"

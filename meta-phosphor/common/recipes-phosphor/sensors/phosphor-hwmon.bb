@@ -10,16 +10,23 @@ inherit autotools pkgconfig obmc-phosphor-systemd
 SYSTEMD_SERVICE_${PN} = "xyz.openbmc_project.Hwmon@.service"
 
 DEPENDS += "autoconf-archive-native"
-DEPENDS += "sdbusplus"
+DEPENDS += " \
+        sdbusplus \
+        phosphor-dbus-interfaces \
+        phosphor-logging \
+        "
+
 
 RDEPENDS_${PN} += "\
-        libsystemd \
+        sdbusplus \
+        phosphor-dbus-interfaces \
+        phosphor-logging \
         "
 
 SRC_URI += "git://github.com/openbmc/phosphor-hwmon"
 SRC_URI += "file://70-hwmon.rules"
 
-SRCREV = "30dbceec70d96487016b129334ba539b9e161c08"
+SRCREV = "bf86e72ebc4b33264ac0d8d6c8f0383f76b44e0f"
 
 S = "${WORKDIR}/git"
 

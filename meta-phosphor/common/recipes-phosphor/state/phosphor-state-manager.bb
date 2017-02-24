@@ -48,6 +48,6 @@ FILES_${PN}-bmc = "${sbindir}/phosphor-bmc-state-manager"
 DBUS_SERVICE_${PN}-bmc += "xyz.openbmc_project.State.BMC.service"
 
 SRC_URI += "git://github.com/openbmc/phosphor-state-manager"
-SRCREV = "d3e58474dad16a9e215df1687f72dd9f80f0c231"
+SRCREV = "a8006a2113114bcccf03a439d335e57de16a9693"
 
 S = "${WORKDIR}/git"
