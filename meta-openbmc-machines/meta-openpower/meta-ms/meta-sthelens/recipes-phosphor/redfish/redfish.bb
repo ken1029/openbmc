@@ -20,7 +20,6 @@ SRC_URI = "git://github.com/ken1029/bluefish;protocol=https"
 
 ### SSH download ###
 #SRC_URI = "git://csibmc@csibmc.visualstudio.com:22/J2010/_git/redfish;protocol=ssh"
-SRC_URI = "git://github.com/ken1029/bluefish;protocol=https"
 
 SRCREV="${AUTOREV}"
 
