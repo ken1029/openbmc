@@ -1,0 +1,52 @@
+diff --git a/source/controls/chassis_system_power.py b/source/controls/chassis_system_power.py
+index 93439cc..6eeeee2 100755
+--- a/source/controls/chassis_system_power.py
++++ b/source/controls/chassis_system_power.py
+@@ -9,17 +9,17 @@ import dbus.service
+ import collections
+ import obmc_dbuslib
+ import math
+-import obmc.gpio_lib
++#import obmc.gpio_lib
+ 
+ from obmc.dbuslib.bindings import get_dbus, DbusProperties, DbusObjectManager
+ from utils import completion_code
+ 
+ bus = get_dbus()
+ 
+-gpiolib = obmc.gpio_lib.GpioLib()
++#gpiolib = obmc.gpio_lib.GpioLib()
+ 
+-gpiolib.InitGpio('PSU1_PRSNT_N')
+-gpiolib.InitGpio('PSU2_PRSNT_N')
++#gpiolib.InitGpio('PSU1_PRSNT_N')
++#gpiolib.InitGpio('PSU2_PRSNT_N')
+ 
+ DBUS_NAME = 'org.openbmc.Sensors'
+ DBUS_INTERFACE = 'org.freedesktop.DBus.Properties'
+@@ -63,6 +63,10 @@ sensor_power_powersupplies_table =\
+ ]
+ 
+ def GetPsuPresent(psu_num):
++    return 0
++
++'''
++def GetPsuPresent(psu_num):
+     gpio_path = gpiolib.sys_gpio_path['PSU'+str(psu_num)+'_PRSNT_N']
+ 
+     with open (gpio_path, 'r') as f:
+@@ -73,6 +77,7 @@ def GetPsuPresent(psu_num):
+         return 1
+     else:
+         return 0
++'''
+ 
+ def get_chassis_power():
+     result = {}
+@@ -146,4 +151,4 @@ def get_chassis_power():
+     result[completion_code.cc_key] = completion_code.success
+     
+     return result
+-   
+\ No newline at end of file
++   
