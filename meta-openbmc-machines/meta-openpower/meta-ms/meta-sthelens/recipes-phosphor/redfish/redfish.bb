@@ -16,6 +16,7 @@ BB_NO_NETWORK = "0"
 #### HTTP download waitting for GCM4ML ready #### 
 # SRC_URI = "git://csibmc.visualstudio.com/J2010/_git/redfish;protocol=https"
 SRC_URI = "git://github.com/ken1029/bluefish;protocol=https"
+SRC_URI += "file://workaround_empty_redfish_explib.patch"
 
 
 ### SSH download ###
