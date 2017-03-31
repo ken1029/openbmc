@@ -1,6 +1,6 @@
-KBRANCH ?= "dev-4.7"
+KBRANCH ?= "dev-4.7-wip"
 LINUX_VERSION ?= "4.7"
-SRCREV="05543e532c78185ba82057415f96d13e5f500072"
-KSRC = "git://github.com/shenki/linux;protocol=git;branch=${KBRANCH}"
+SRCREV="613f95e9cadcf4371732401e53f2c43b2bbe2119"
+KSRC = "git://github.com/ken1029/linux;protocol=git;branch=${KBRANCH}"
 
 require common/recipes-kernel/linux/linux-obmc.inc
