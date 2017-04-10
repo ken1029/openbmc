@@ -15,15 +15,8 @@ BB_NO_NETWORK = "0"
 
 RDEPENDS_${PN} = "bash python"
 
-#### HTTP download waitting for GCM4ML ready #### 
-# SRC_URI = "git://csibmc.visualstudio.com/J2010/_git/redfish;protocol=https"
-SRC_URI = "git://github.com/doylehuang/bluefish;protocol=https"
-
-
-### SSH download ###
-#SRC_URI = "git://csibmc@csibmc.visualstudio.com:22/J2010/_git/redfish;protocol=ssh"
-
-SRCREV="3105358fc4d7ee7b22047791745c3f1fd0d43bf6"
+SRC_URI = "git://csibmc.visualstudio.com/G50/_git/redfish;protocol=https"
+SRCREV="91ae5369659402bc3bd234080d02fb25b6846f95"
 
 
 FILESEXTRAPATHS_append := "${THISDIR}/redfish:"
