@@ -1,6 +1,6 @@
 DESCRIPTION = "IPMI over LAN (RMCP/IPMIv1.5) Server"
 
-HOMEPAGE = "https://csibmc.visualstudio.com/J2010/_git/oob-ipmid"
+HOMEPAGE = "https://csibmc.visualstudio.com/G50/_git/oob-ipmid"
 LICENSE = "Microsoft"
 
 inherit obmc-phosphor-license
@@ -10,8 +10,7 @@ BB_NO_NETWORK = "0"
 
 FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
 
-#SRC_URI = "git://csibmc@csibmc.visualstudio.com:22/J2010/_git/oob-ipmid;protocol=ssh;"
-SRC_URI = "git://github.com/danielweitw/oob-ipmid.git;protocol=https;"
+SRC_URI = "git://csibmc@csibmc.visualstudio.com:22/G50/_git/oob-ipmid;protocol=ssh;"
 SRCREV = "${AUTOREV}"
 
 S = "${WORKDIR}/git"
