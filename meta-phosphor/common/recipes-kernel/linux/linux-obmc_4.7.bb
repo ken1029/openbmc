@@ -1,5 +1,5 @@
-KBRANCH ?= "dev-4.7-wip"
+KBRANCH ?= "foxconn-sthelens-4.7"
 LINUX_VERSION ?= "4.7"
-SRCREV="dd3d716ec4e4919823b55a4673bced6a268de83d"
+SRCREV="ad6f155e7b922d3f278337d7618dd88b2dc6e6f3"
 
-require linux-obmc.inc
+require common/recipes-kernel/linux/linux-obmc.inc
