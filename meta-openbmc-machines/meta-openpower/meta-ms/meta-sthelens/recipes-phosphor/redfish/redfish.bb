@@ -13,10 +13,10 @@ inherit autotools
 
 BB_NO_NETWORK = "0"
 
-### SSH download ###
-SRC_URI = "git://csibmc@csibmc.visualstudio.com:22/G50/_git/redfish;protocol=ssh"
+RDEPENDS_${PN} = "bash python"
 
-SRCREV="${AUTOREV}"
+SRC_URI = "git://csibmc@csibmc.visualstudio.com/G50/_git/redfish"
+SRCREV="91ae5369659402bc3bd234080d02fb25b6846f95"
 
 
 FILESEXTRAPATHS_append := "${THISDIR}/redfish:"
