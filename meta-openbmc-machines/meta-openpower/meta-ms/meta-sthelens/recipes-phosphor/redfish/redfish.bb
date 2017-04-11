@@ -15,7 +15,7 @@ BB_NO_NETWORK = "0"
 
 RDEPENDS_${PN} = "bash python"
 
-SRC_URI = "git://csibmc.visualstudio.com/G50/_git/redfish;protocol=https"
+SRC_URI = "git://csibmc@csibmc.visualstudio.com/G50/_git/redfish"
 SRCREV="91ae5369659402bc3bd234080d02fb25b6846f95"
 
 
