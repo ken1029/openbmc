@@ -13,6 +13,7 @@ SRC_URI[sha256sum] = "54b8d26300ce408c0916a3e63ef6cd3e6aca76230833558deb7de15196
 
 SRC_URI += "file://gevent-allow-ssl-v2-or-v3-certificates.patch"
 SRC_URI += "file://0001-gevent-py279-ssl-wrap.patch"
+SRC_URI += "file://0002-improve-gevent-performance.patch"
 
 inherit pypi setuptools
 
