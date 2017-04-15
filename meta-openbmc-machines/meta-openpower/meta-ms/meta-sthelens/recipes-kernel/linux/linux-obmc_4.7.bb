@@ -1,6 +1,6 @@
-KBRANCH ?= "dev-4.7-wip"
+KBRANCH ?= "foxconn-sthelens-4.7"
 LINUX_VERSION ?= "4.7"
-SRCREV="988cb3d6ec50689b4e8a6985bebc084486d772b2"
-KSRC = "git://github.com/ken1029/linux;protocol=git;branch=${KBRANCH}"
+SRCREV="ad6f155e7b922d3f278337d7618dd88b2dc6e6f3"
+KSRC = "git://github.com/foxconn-bmc-ks/linux;protocol=git;branch=${KBRANCH}"
 
 require common/recipes-kernel/linux/linux-obmc.inc
