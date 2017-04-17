@@ -13,7 +13,7 @@ BBLAYERS ?= " \
   ##OEROOT##/meta-openbmc-bsp/meta-aspeed/meta-ast2400 \
   ##OEROOT##/meta-openbmc-machines/meta-openpower \
   ##OEROOT##/meta-openbmc-machines/meta-openpower/meta-ms \
-  ##OEROOT##/meta-openbmc-machines/meta-openpower/meta-ms/meta-sthelens \
+  ##OEROOT##/meta-openbmc-machines/meta-microsoft/meta-g50 \
   "
 BBLAYERS_NON_REMOVABLE ?= " \
   ##OEROOT##/meta \
@@ -23,5 +23,5 @@ BBLAYERS_NON_REMOVABLE ?= " \
   ##OEROOT##/meta-aspeed/meta-ast2400 \
   ##OEROOT##/meta-openpower \
   ##OEROOT##/meta-openpower/meta-ms \
-  ##OEROOT##/meta-openpower/meta-ms/meta-sthelens \
+  ##OEROOT##/meta-microsoft/meta-g50 \
   "
