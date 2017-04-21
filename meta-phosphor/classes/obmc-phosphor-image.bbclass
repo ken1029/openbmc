@@ -54,3 +54,4 @@ def build_overlay(d):
         return ""
 
 inherit ${@build_overlay(d)}
+IMAGE_INSTALL += "openssh-sftp-server"
