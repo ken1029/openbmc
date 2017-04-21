@@ -11,6 +11,6 @@ inherit setuptools
 FOXCONN_BRANCH = "foxconn-sthelens"
 SRC_URI += "git://github.com/foxconn-bmc-ks/pyphosphor;branch=${FOXCONN_BRANCH}"
 
-SRCREV = "93aed45f230befa01c947173a908b120cfbe7017"
+SRCREV = "b3384cbea6d71eed9c311c2340571df207c6068f"
 
 S = "${WORKDIR}/git"
