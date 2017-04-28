@@ -25,6 +25,7 @@ RDEPENDS_${PN} += " \
         pyphosphor \
         "
 SRC_URI += "git://github.com/openbmc/phosphor-rest-server"
+SRC_URI += "file://001-migrate_to_port_9443.patch"
 
 SRCREV = "b41507f3b9c9a79ccd0ef6f48ac839b306a604b7"
 
