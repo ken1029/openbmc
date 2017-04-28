@@ -3,6 +3,6 @@ DESCRIPTION = "Board wiring information for the G50 system."
 HOMEPAGE = "https://github.com/foxconn-bmc-ks/skeleton"
 PR = "r1"
 
-SRCREV = "f89408f0ec9821b03b4af1fa0186ac85eff86b73"
+SRCREV = "d5ce56095e8ab69a4fbe3f3590cd2d9c96de6f31"
 inherit config-in-skeleton
 inherit obmc-phosphor-license
