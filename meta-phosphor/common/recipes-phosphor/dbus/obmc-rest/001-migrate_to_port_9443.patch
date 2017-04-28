@@ -1,0 +1,13 @@
+diff --git a/obmc-rest b/obmc-rest
+index e7dbbba..3b7b19b 100644
+--- a/obmc-rest
++++ b/obmc-rest
+@@ -765,7 +765,7 @@ if __name__ == '__main__':
+         sys.prefix, 'share', os.path.basename(__file__), 'cert.pem')
+ 
+     server = Rocket(
+-        ('0.0.0.0', 443, default_cert, default_cert),
++        ('0.0.0.0', 9443, default_cert, default_cert),
+         'wsgi', {'wsgi_app': app},
+         min_threads=1,
+         max_threads=1)
