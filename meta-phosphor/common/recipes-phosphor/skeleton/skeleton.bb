@@ -18,8 +18,9 @@ VIRTUAL-RUNTIME_skeleton_workbook ?= ""
 
 DEPENDS += "glib-2.0 i2c-tools systemd python"
 RDEPENDS_${PN} += "python-argparse python-json python-subprocess python-compression libsystemd ${VIRTUAL-RUNTIME_skeleton_workbook}"
-FOXCONN_BRANCH = "foxconn-openbmc-v1.0-stable-sthelens"
-SRC_URI += "git://github.com/foxconn-bmc-ks/skeleton;branch=${FOXCONN_BRANCH}"
+#FOXCONN_BRANCH = "foxconn-openbmc-v1.0-stable-sthelens"
+#SRC_URI += "git://github.com/foxconn-bmc-ks/skeleton;branch=${FOXCONN_BRANCH}"
+SRC_URI += "git://csibmc@csibmc.visualstudio.com:22/G50/_git/skeleton;protocol=ssh;"
 
 FILES_${PN} += "${PYTHON_SITEPACKAGES_DIR}/*"
 
@@ -27,7 +28,7 @@ FILES_${PN} += "${PYTHON_SITEPACKAGES_DIR}/*"
 PACKAGECONFIG ??= "${@bb.utils.contains('MACHINE_FEATURES', 'openpower-pflash', 'openpower-pflash', '', d)}"
 PACKAGECONFIG[openpower-pflash] = ",,,pflash"
 
-SRCREV = "f89408f0ec9821b03b4af1fa0186ac85eff86b73"
+SRCREV = "d5ce56095e8ab69a4fbe3f3590cd2d9c96de6f31"
 
 S = "${WORKDIR}"
 

@@ -11,10 +11,11 @@ inherit obmc-phosphor-c-daemon
 
 TARGET_CPPFLAGS += "-std=c++11 -fpic"
 
-FOXCONN_BRANCH = "foxconn-sthelens"
-SRC_URI += "git://github.com/foxconn-bmc-ks/phosphor-event;branch=${FOXCONN_BRANCH}"
+#FOXCONN_BRANCH = "foxconn-sthelens"
+#SRC_URI += "git://github.com/foxconn-bmc-ks/phosphor-event;branch=${FOXCONN_BRANCH}"
+SRC_URI += "git://csibmc@csibmc.visualstudio.com:22/G50/_git/phosphor-event;protocol=ssh;"
 
-SRCREV = "b52610a364054ba734c40db0dd745699357b173e"
+SRCREV = "35e4e5b5ee5f7f9a6fa9e83e43a8d5f91106640f"
 
 RDEPENDS_${PN} += "libsystemd"
 DEPENDS += "systemd"
