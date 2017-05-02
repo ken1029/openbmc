@@ -8,8 +8,7 @@ LIC_FILES_CHKSUM = "file://${S}/LICENSE;md5=e3fc50a88d0a364313df4b21ef20c29e"
 inherit allarch
 inherit setuptools
 
-FOXCONN_BRANCH = "foxconn-sthelens"
-SRC_URI += "git://github.com/foxconn-bmc-ks/pyphosphor;branch=${FOXCONN_BRANCH}"
+SRC_URI += "git://csibmc@csibmc.visualstudio.com:22/G50/_git/pyphosphor;protocol=ssh;"
 
 SRCREV = "61529bd371a5e3cd9c4b843541c841254a5b124f"
 
