@@ -1,0 +1,10 @@
+diff --git a/units/systemd-reboot.service.in b/units/systemd-reboot.service.in
+index d99bd3e70..4d7f19199 100644
+--- a/units/systemd-reboot.service.in
++++ b/units/systemd-reboot.service.in
+@@ -15,3 +15,4 @@ After=shutdown.target umount.target final.target
+ [Service]
+ Type=oneshot
+ ExecStart=@SYSTEMCTL@ --force reboot
++ExecStartPre=/bin/touch /var/lib/obmc/check_reboot
+\ No newline at end of file
