@@ -3,6 +3,7 @@ FILESEXTRAPATHS_append := "${THISDIR}/${PN}:"
 SRC_URI += "file://default.network"
 SRC_URI += "file://shutdown-watchdog.conf"
 SRC_URI += "file://0100-systemd_networkd_dbus_setaddress.patch"
+SRC_URI += "file://0101-add_watchdog_check_file_before_reboot.patch"
 
 FILES_${PN} += "${libdir}/systemd/network/default.network"
 FILES_${PN} += "${libdir}/systemd/system.conf.d/shutdown-watchdog.conf"
