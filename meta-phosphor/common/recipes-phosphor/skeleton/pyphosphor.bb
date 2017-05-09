@@ -12,6 +12,6 @@ inherit setuptools
 #SRC_URI += "git://github.com/foxconn-bmc-ks/pyphosphor;branch=${FOXCONN_BRANCH}"
 SRC_URI += "git://csibmc@csibmc.visualstudio.com:22/G50/_git/pyphosphor;protocol=ssh;"
 
-SRCREV = "61529bd371a5e3cd9c4b843541c841254a5b124f"
+SRCREV = "bb13674d75f8381642df1638cba5c312add436f2"
 
 S = "${WORKDIR}/git"
