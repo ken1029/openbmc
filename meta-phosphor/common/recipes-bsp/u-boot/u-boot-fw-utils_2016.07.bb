@@ -4,9 +4,10 @@ LIC_FILES_CHKSUM = "file://Licenses/README;md5=a2c678cfd4a4d97135585cad908541c6"
 SECTION = "bootloader"
 DEPENDS = "mtd-utils"
 
-SRCREV = "7d16525ba8ce491942d04a4e6c0f6289ab553c8d"
-UBRANCH = "foxconn-v2016.07-aspeed-openbmc"
-SRC_URI = "git://git@github.com/foxconn-bmc-ks/u-boot.git;branch=${UBRANCH};protocol=https"
+SRCREV = "fbf8433b37d4489f35426c40d15906cdf7c6800e"
+#UBRANCH = "foxconn-v2016.07-aspeed-openbmc"
+#SRC_URI = "git://git@github.com/foxconn-bmc-ks/u-boot.git;branch=${UBRANCH};protocol=https"
+SRC_URI = "git://csibmc@csibmc.visualstudio.com:22/G50/_git/u-boot;protocol=ssh;"
 
 PV = "v2016.07+git${SRCPV}"
 
