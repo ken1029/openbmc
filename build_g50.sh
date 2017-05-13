@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 REPO_DIR=`pwd`
 TEMPLATECONF=$REPO_DIR/meta-openbmc-machines/meta-microsoft/meta-g50/conf/
