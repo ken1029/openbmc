@@ -13,7 +13,7 @@ TARGET_CPPFLAGS += "-std=c++11 -fpic"
 
 SRC_URI += "git://csibmc@csibmc.visualstudio.com:22/G50/_git/phosphor-event;protocol=ssh;"
 
-SRCREV = "498560a5b116b1d10847b8bb023fcf63e7d0d647"
+SRCREV = "4f69180997b8cb64abcfd4997a1c802ecab6b7ed"
 
 RDEPENDS_${PN} += "libsystemd"
 DEPENDS += "systemd"
