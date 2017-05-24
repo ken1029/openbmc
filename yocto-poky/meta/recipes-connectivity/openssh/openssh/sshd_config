@@ -10,7 +10,7 @@
 # possible, but leave them commented.  Uncommented options change a
 # default value.
 
-#Port 22
+Port 22
 #AddressFamily any
 #ListenAddress 0.0.0.0
 #ListenAddress ::
@@ -21,14 +21,14 @@ Protocol 2
 # HostKey for protocol version 1
 #HostKey /etc/ssh/ssh_host_key
 # HostKeys for protocol version 2
-#HostKey /etc/ssh/ssh_host_rsa_key
-#HostKey /etc/ssh/ssh_host_dsa_key
-#HostKey /etc/ssh/ssh_host_ecdsa_key
-#HostKey /etc/ssh/ssh_host_ed25519_key
+HostKey /etc/ssh/ssh_host_rsa_key
+HostKey /etc/ssh/ssh_host_dsa_key
+HostKey /etc/ssh/ssh_host_ecdsa_key
+HostKey /etc/ssh/ssh_host_ed25519_key
 
 # Lifetime and size of ephemeral version 1 server key
-#KeyRegenerationInterval 1h
-#ServerKeyBits 1024
+KeyRegenerationInterval 1h
+ServerKeyBits 1024
 
 # Ciphers and keying
 #RekeyLimit default none
@@ -94,10 +94,10 @@ ChallengeResponseAuthentication no
 # If you just want the PAM account and session checks to run without
 # PAM authentication, then enable this but set PasswordAuthentication
 # and ChallengeResponseAuthentication to 'no'.
-#UsePAM no
+UsePAM yes
 
 #AllowAgentForwarding yes
-#AllowTcpForwarding yes
+AllowTcpForwarding yes
 #GatewayPorts no
 #X11Forwarding no
 #X11DisplayOffset 10
@@ -116,18 +116,19 @@ ClientAliveCountMax 4
 #PidFile /var/run/sshd.pid
 #MaxStartups 10:30:100
 #PermitTunnel no
-#ChrootDirectory none
+#ChrootDirectory /var/wcs/home
 #VersionAddendum none
 
 # no default banner path
 #Banner none
 
 # override default of no subsystems
-Subsystem	sftp	/usr/libexec/sftp-server
+Subsystem	sftp	internal-sftp
 
 # Example of overriding settings on a per-user basis
-#Match User anoncvs
-#	X11Forwarding no
-#	AllowTcpForwarding no
-#	PermitTTY no
-#	ForceCommand cvs server
+Match User sysadmin
+	X11Forwarding no
+	ChrootDirectory /var/wcs/home
+	AllowTcpForwarding no
+	PermitTTY no
+	ForceCommand internal-sftp
