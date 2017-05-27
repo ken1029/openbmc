@@ -15,7 +15,7 @@ INHIBIT_PACKAGE_DEBUG_SPLIT = "1"
 
 FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
 
-SRC_URI = "git://github.com/ken1029/fru-util"
+SRC_URI = "git://csibmc@csibmc.visualstudio.com:22/G50/_git/fruutil;protocol=ssh;"
 SRCREV = "9c171002298689d29fcadd1b48794f25aa8ddacb"
 S = "${WORKDIR}/git"
 
