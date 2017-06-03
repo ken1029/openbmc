@@ -1,6 +1,6 @@
-KBRANCH ?= "foxconn-dev-4.7"
+KBRANCH ?= "foxconn-dev-4.7-USB"
 LINUX_VERSION ?= "4.7"
 
-SRCREV="65de39111444c22945ab6a81ed7d92bcc4e998a3"
+SRCREV="b572fda1fcf31cbc11f4ef9e8a409e280f199131"
 
 require linux-obmc.inc

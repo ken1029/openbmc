@@ -4,7 +4,7 @@ LICENSE = "GPLv2"
 
 KCONFIG_MODE="--alldefconfig"
 
-KSRC ?= "git://github.com/foxconn-bmc-ks/linux;protocol=git;branch=${KBRANCH}"
+KSRC ?= "git://github.com/ken1029/linux;protocol=git;branch=${KBRANCH}"
 FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
 
 SRC_URI = "${KSRC}"
