@@ -17,7 +17,7 @@ inherit python-dir
 VIRTUAL-RUNTIME_skeleton_workbook ?= ""
 
 DEPENDS += "glib-2.0 i2c-tools systemd python"
-RDEPENDS_${PN} += "python-argparse python-json python-subprocess python-compression libsystemd ${VIRTUAL-RUNTIME_skeleton_workbook}"
+RDEPENDS_${PN} += "python-argparse python-json python-subprocess32 python-compression libsystemd ${VIRTUAL-RUNTIME_skeleton_workbook}"
 SRC_URI += "git://csibmc@csibmc.visualstudio.com:22/G50/_git/skeleton;protocol=ssh;"
 
 FILES_${PN} += "${PYTHON_SITEPACKAGES_DIR}/*"
