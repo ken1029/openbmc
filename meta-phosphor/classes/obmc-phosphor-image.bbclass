@@ -53,6 +53,9 @@ def build_overlay(d):
         return ""
 
 inherit ${@build_overlay(d)}
-IMAGE_INSTALL += "openssh-sftp-server"
-IMAGE_INSTALL += "obmc-ast-watchdog"
-IMAGE_INSTALL += "openssh-sshd"
+IMAGE_INSTALL += " \
+	openssh-sftp-server \
+	obmc-ast-watchdog \
+	openssh-sshd \
+	python-subprocess32 \
+"
