@@ -41,6 +41,7 @@ CORE_IMAGE_EXTRA_INSTALL_append = " bash \
         i2c-tools \
         screen \
         inarp \
+        host-ipmid \
         obmc-console \
         ${OBMC_IMAGE_EXTRA_INSTALL} \
         "
