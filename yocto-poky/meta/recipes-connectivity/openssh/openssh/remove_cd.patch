@@ -1,0 +1,114 @@
+--- a/sftp-server.c	2016-07-28 06:54:27.000000000 +0800
++++ b/sftp-server.c	2017-04-07 17:49:57.507100900 +0800
+@@ -84,6 +84,8 @@
+ 	Attrib attrib;
+ };
+ 
++#define MSHOME "/run/initramfs"
++
+ /* Packet handlers */
+ static void process_open(u_int32_t id);
+ static void process_close(u_int32_t id);
+@@ -1008,13 +1010,19 @@
+ 	DIR *dirp = NULL;
+ 	char *path;
+ 	int r, handle, status = SSH2_FX_FAILURE;
+-
+ 	if ((r = sshbuf_get_cstring(iqueue, &path, NULL)) != 0)
+ 		fatal("%s: buffer error: %s", __func__, ssh_err(r));
+ 
+ 	debug3("request %u: opendir", id);
+ 	logit("opendir \"%s\"", path);
+ 	dirp = opendir(path);
++	
++	if(strcmp(MSHOME,path)){
++		if(dirp != NULL){
++			dirp = NULL;
++			closedir(dirp);
++		}
++	}
+ 	if (dirp == NULL) {
+ 		status = errno_to_portable(errno);
+ 	} else {
+@@ -1045,8 +1053,13 @@
+ 
+ 	debug("request %u: readdir \"%s\" (handle %d)", id,
+ 	    handle_to_name(handle), handle);
++
+ 	dirp = handle_to_dir(handle);
+ 	path = handle_to_name(handle);
++
++	if(strcmp(MSHOME,path))
++		path = NULL;
++
+ 	if (dirp == NULL || path == NULL) {
+ 		send_status(id, SSH2_FX_FAILURE);
+ 	} else {
+@@ -1159,14 +1172,19 @@
+ 	}
+ 	debug3("request %u: realpath", id);
+ 	verbose("realpath \"%s\"", path);
++
+ 	if (realpath(path, resolvedname) == NULL) {
+ 		send_status(id, errno_to_portable(errno));
+ 	} else {
+-		Stat s;
+-		attrib_clear(&s.attrib);
+-		s.name = s.long_name = resolvedname;
+-		send_names(id, 1, &s);
++		if(!strcmp(MSHOME,resolvedname)) {
++			Stat s;
++			attrib_clear(&s.attrib);
++			s.name = s.long_name = resolvedname;
++			send_names(id, 1, &s);
++		}else
++			send_status(id, errno_to_portable(errno));
+ 	}
++			
+ 	free(path);
+ }
+ 
+@@ -1444,6 +1462,7 @@
+ 			fatal("%s: buffer error: %s", __func__, ssh_err(r));
+ 		for (i = 0; handlers[i].handler != NULL; i++) {
+ 			if (type == handlers[i].type) {
++
+ 				if (!request_permitted(&handlers[i])) {
+ 					send_status(id,
+ 					    SSH2_FX_PERMISSION_DENIED);
+@@ -1506,6 +1525,7 @@
+ 	SyslogFacility log_facility = SYSLOG_FACILITY_AUTH;
+ 	char *cp, *homedir = NULL, buf[4*4096];
+ 	long mask;
++	DIR *dirp;  
+ 
+ 	extern char *optarg;
+ 	extern char *__progname;
+@@ -1632,13 +1652,24 @@
+ 	rset = xcalloc(howmany(max + 1, NFDBITS), sizeof(fd_mask));
+ 	wset = xcalloc(howmany(max + 1, NFDBITS), sizeof(fd_mask));
+ 
+-	if (homedir != NULL) {
+-		if (chdir(homedir) != 0) {
+-			error("chdir to \"%s\" failed: %s", homedir,
++	if(dirp = opendir(MSHOME) == NULL){
++
++		if (homedir != NULL) {
++			if (chdir(homedir) != 0) {
++				error("chdir to \"%s\" failed: %s", homedir,
++				    strerror(errno));
++			}
++		}
++	} else {
++
++		if (chdir(MSHOME) != 0) {
++			error("chdir to \"%s\" failed: %s", MSHOME,
+ 			    strerror(errno));
+ 		}
++
+ 	}
+ 
++
+ 	set_size = howmany(max + 1, NFDBITS) * sizeof(fd_mask);
+ 	for (;;) {
+ 		memset(rset, 0, set_size);
