@@ -33,6 +33,7 @@ IMAGE_FEATURES += " \
         obmc-phosphor-policy-mgmt \
         obmc-phosphor-user-mgmt \
         obmc-phosphor-system-mgmt \
+        ssh-server-dropbear \
         "
 
 CORE_IMAGE_EXTRA_INSTALL_append = " bash \
@@ -56,4 +57,3 @@ def build_overlay(d):
 inherit ${@build_overlay(d)}
 IMAGE_INSTALL += "openssh-sftp-server"
 IMAGE_INSTALL += "obmc-ast-watchdog"
-IMAGE_INSTALL += "openssh-sshd"
